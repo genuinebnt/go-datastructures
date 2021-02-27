@@ -30,4 +30,18 @@ func TestSingleLinkedList(t *testing.T) {
 
 		Equals(t, got, want)
 	})
+
+	t.Run("check InsertFront", func(t *testing.T) {
+		l := List{head: nil, tail: nil}
+		l.InsertFront(44)
+		l.InsertFront(55)
+		l.InsertEnd(100)
+		l.InsertFront(1)
+		l.InsertEnd(33)
+
+		got := l.Show()
+		want := []int{1,55,44,100,33}
+
+		Equals(t, got, want)
+	})
 }

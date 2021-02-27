@@ -49,3 +49,18 @@ func (l *List) Show() []int {
 	return result
 
 }
+
+//InsertFront add node as first element of linked list
+func (l *List) InsertFront(elem int) {
+
+	node := Node{elem: elem, next: nil} // inititialize node with element
+
+	if l.head == nil {
+		l.head = &node
+		l.tail = &node
+	} else {
+		node.next = l.head //make new node point to nil as its
+		l.head = &node     //make head point to new node
+	}
+
+}
