@@ -24,6 +24,7 @@ func (q *Queue) Pop() []int {
 		return q.items
 	}
 	items := q.items[1:]
+	q.items = items
 	return items
 }
 

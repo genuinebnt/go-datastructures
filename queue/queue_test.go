@@ -35,9 +35,11 @@ func TestQueue(t *testing.T) {
 		q1 := Queue{[]int{}}
 		q1.Push(12)
 		q1.Push(33)
+		q1.Push(44)
+		q1.Pop()
 
 		got := q1.Show()
-		want := []int{12, 33}
+		want := []int{33, 44}
 
 		Equals(t, got, want)
 	})
