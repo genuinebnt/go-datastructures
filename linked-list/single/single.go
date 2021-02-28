@@ -1,4 +1,4 @@
-package singleLinkedList
+package singlelinkedlist
 
 //List contain pointer to beginning and end of list
 type List struct {
@@ -63,4 +63,14 @@ func (l *List) InsertFront(elem int) {
 		l.head = &node     //make head point to new node
 	}
 
+}
+
+//Search loop through list to find element
+func (l *List) Search(elem int) string {
+	for currentNode := l.head; currentNode.next != nil; currentNode = currentNode.next {
+		if currentNode.elem == elem {
+			return "Found"
+		}
+	}
+	return "Not Found"
 }

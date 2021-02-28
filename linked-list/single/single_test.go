@@ -1,4 +1,4 @@
-package singleLinkedList
+package singlelinkedlist
 
 import (
 	"reflect"
@@ -40,8 +40,24 @@ func TestSingleLinkedList(t *testing.T) {
 		l.InsertEnd(33)
 
 		got := l.Show()
-		want := []int{1,55,44,100,33}
+		want := []int{1, 55, 44, 100, 33}
 
 		Equals(t, got, want)
+	})
+
+	t.Run("searching elements", func(t *testing.T) {
+		l := List{head: nil, tail: nil}
+		for i := 1; i <= 5; i++ {
+			l.InsertEnd(i * 10)
+			l.InsertFront(i * 5)
+		}
+
+		got := l.Search(20)
+		want := "Found"
+
+		if got != want {
+			t.Errorf("got %s want %s and elements are %v", got, want, l.Show())
+		}
+
 	})
 }
