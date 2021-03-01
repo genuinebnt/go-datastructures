@@ -1,4 +1,4 @@
-package singlelinkedlist
+package circularsinglylinkedlist
 
 import (
 	"reflect"
@@ -52,7 +52,7 @@ func TestSingleLinkedList(t *testing.T) {
 			l.InsertFront(i * 5)
 		}
 
-		got := l.Search(20)
+		got := l.Search(25)
 		want := "Found"
 
 		if got != want {
